@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Rose Day Suchana ❤️</title>
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+    }
+
+
+    .card {
+      background: rgba(255, 255, 255, 0.18);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      max-width: 360px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      animation: fadeIn 2s ease;
+      z-index: 2;
+    }
+
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #ffe6ee;
+    }
+
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+
+    button {
+      background: #ff2f68;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 25px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+
+    button:hover {
+      background: #e6004c;
+      transform: scale(1.05);
+    }
+
+
+    .rose {
+      position: absolute;
+      top: -50px;
+      font-size: 28px;
+      animation: fall linear infinite;
+      opacity: 0.9;
+    }
+
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2023/03/06/audio_6b0c9c4df1.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div class="card">
+    <h1>🌹 Happy Rose Day 🌹</h1>
+    <h2>Dear Suchana ❤️</h2>
+    <p>
+      Just like a rose,<br>
+      you add beauty, color, and warmth to my life.<br>
+      This rose is a small symbol of my feelings for you.
+    </p>
+    <button onclick="showLove()">Tap for a Surprise 💌</button>
+    <p id="message" style="margin-top:15px;"></p>
+  </div>
+
+
+  <script>
+    function showLove() {
+      document.getElementById("message").innerHTML =
+        "Suchana 🌹<br>You are my favorite person,<br>today & always 💖";
+    }
+
+
+    // Floating roses
+    for (let i = 0; i < 25; i++) {
+      let rose = document.createElement("div");
+      rose.className = "rose";
+      rose.innerHTML = "🌹";
+      rose.style.left = Math.random() * 100 + "vw";
+      rose.style.animationDuration = (3 + Math.random() * 6) + "s";
+      document.body.appendChild(rose);
+    }
+  </script>
+
+
+</body>
+</html>
